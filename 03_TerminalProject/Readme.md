@@ -1,4 +1,4 @@
-* Show with ncurses*
+# Show with ncurses
 
 Supports navigation with arrows and PgUp pgDn
 
