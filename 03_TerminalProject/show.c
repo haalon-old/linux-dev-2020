@@ -3,34 +3,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <wchar.h>
+
+// проверка wchar  ±  ➦ ✘ ⚡ ⚙
 
 // returns 0 if nothing to show with these offsets
 int show(WINDOW *win, FILE *f, int height, int width, int line_off, int col_off)
 {
-    int lastchar;
+    wint_t lastchar;
     werase(win);
     fseek(f,0,SEEK_SET); // posistion at the file beginning
 
     // skip first 'line_off' lines
     for (int i = 0; i < line_off;)
     {
-        lastchar = fgetc(f);
-        if(lastchar == '\n') i++;
+        lastchar = fgetwc(f);
+        if(lastchar == L'\n') i++;
         if(lastchar == EOF) return 0;
     }
 
     int new_width = width + col_off;
-    char buf[new_width];
-    memset(buf, 0, new_width);
+    wchar_t buf[new_width];
+    wmemset(buf, 0, new_width);
 
     int nonempty_cols = 0;
     for (int i = 0; i < height; ++i)
     {
-        
-        if(fgets(buf, new_width, f) != NULL)
-            if(strlen(buf) > col_off)
+        if(fgetws(buf, new_width, f) != NULL)
+            if(wcslen(buf) > col_off)
             {
-                wprintw(win, "%s", buf + col_off);
+                wprintw(win, "%ls", buf + col_off);
                 nonempty_cols++;
             }
             else
@@ -49,6 +51,7 @@ int show(WINDOW *win, FILE *f, int height, int width, int line_off, int col_off)
 
 void control_loop(FILE *f, char *filename)
 {
+    setlocale(LC_ALL, "");
     initscr();
 
     //don't buffer characters
@@ -98,10 +101,9 @@ int main (int argc, char *argv[])
         printf("usage: show filename\n");
         return 1;
     }
-    
     FILE *f = fopen(argv[1], "r");
 
-    setlocale(LC_ALL, "");
+    
     control_loop(f, argv[1]);
     fclose(f);
 } 
