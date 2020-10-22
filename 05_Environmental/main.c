@@ -5,13 +5,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <pcre2.h>
-#include <ncurses.h>
+#include <curses.h>
+#include <locale.h>
 
 #define DX 3
 #define ONLELINE 3
 #define MAXSTR 80
 
 void main() {
+	setlocale(LC_ALL, "");
 	pcre2_code *re;
     PCRE2_SPTR pattern;     /* PCRE2_SPTR is a pointer to unsigned code units of */
     PCRE2_SPTR subject;     /* the appropriate width (in this case, 8 bits). */
