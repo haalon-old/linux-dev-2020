@@ -55,8 +55,11 @@ void main() {
 		subject = (PCRE2_SPTR)inB;
 
 		subject_length = (PCRE2_SIZE)strlen((char *)subject);
-
+#ifdef USE_UTF
         re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, PCRE2_UCP, &errnum, &erroffs, NULL);
+#else
+        re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, 0, &errnum, &erroffs, NULL);
+#endif
 
         if (re == NULL) {
 	        PCRE2_UCHAR buffer[256];
@@ -83,7 +86,9 @@ void main() {
 	        }
 	        pcre2_match_data_free(match_data);   /* Release memory used for the match */
 	        pcre2_code_free(re);                 /*   data and the compiled pattern. */
-	        return 1;
+	        box(winO, 0, 0);
+		    wrefresh(winO);
+	        continue;
 	    }
 
 	    ovector = pcre2_get_ovector_pointer(match_data);
