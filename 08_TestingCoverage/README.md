@@ -10,4 +10,6 @@ make all
 
 Use `make test` to run tests
 
+Use `make coverage` to run `gcov`
+
 To clean up - just remove the *build* directory
