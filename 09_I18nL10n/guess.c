@@ -8,8 +8,8 @@
 
 int main(int argc, char const *argv[])
 {
-	 setlocale(LC_ALL, "ru_RU.UTF-8");
-	// setlocale (LC_ALL, "");
+	 // setlocale(LC_ALL, "ru_RU.UTF-8");
+	setlocale (LC_ALL, "");
 	bindtextdomain ("guess", ".");
 	textdomain ("guess");
 
