@@ -1,0 +1,18 @@
+/// @mainpage
+# @PROJECT_NAME@
+
+## Intro
+
+Guess some numbers - roman or decimal
+
+## Source
+
+See main module in `guess.c`
+
+## Usage
+`guess [OPTIONS]`
+
+### Options
+- `-r` use roman numbers
+- `--help` print help
+- `--version` print version
