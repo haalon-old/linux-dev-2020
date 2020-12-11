@@ -1,0 +1,16 @@
+#!/bin/sh
+echo $1
+MSG="/* COMMENT:: @PACKAGE_NAME@ @PACKAGE_VERSION@:`date` */" 
+for file in src/*.c src/*.h
+do
+	gawk -i inplace -v msg="$MSG" '{
+		if(NR==1)
+		{
+			if($2 == "COMMENT::")
+				print msg;
+			else
+				print msg "\n" $0;
+		}
+		else 
+			print $0;}' $file
+done
