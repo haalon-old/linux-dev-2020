@@ -1,0 +1,58 @@
+# Guess.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: guess 0.0.42\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-19 23:01+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/haalon/Projects/_study/linux-dev-2020/13_PatchInstall/guess.c:22
+#, c-format
+msgid "Come up with a number between 1 and 100\n"
+msgstr ""
+
+#: /home/haalon/Projects/_study/linux-dev-2020/13_PatchInstall/guess.c:23
+#, c-format
+msgid ""
+"I ll try to guess it now\n"
+"\n"
+msgstr ""
+
+#: /home/haalon/Projects/_study/linux-dev-2020/13_PatchInstall/guess.c:27
+#, c-format
+msgid "Is your number between %d and %d?\n"
+msgstr ""
+
+#: /home/haalon/Projects/_study/linux-dev-2020/13_PatchInstall/guess.c:28
+#, c-format
+msgid "(answer 'yes' or 'no')\n"
+msgstr ""
+
+#: /home/haalon/Projects/_study/linux-dev-2020/13_PatchInstall/guess.c:32
+msgid "yes"
+msgstr ""
+
+#: /home/haalon/Projects/_study/linux-dev-2020/13_PatchInstall/guess.c:34
+msgid "no"
+msgstr ""
+
+#: /home/haalon/Projects/_study/linux-dev-2020/13_PatchInstall/guess.c:37
+#, c-format
+msgid "Please answer correctly\n"
+msgstr ""
+
+#: /home/haalon/Projects/_study/linux-dev-2020/13_PatchInstall/guess.c:42
+#, c-format
+msgid "Your number is %d!\n"
+msgstr ""
