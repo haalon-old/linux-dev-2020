@@ -4,10 +4,13 @@ Do an out-of-source build with following commands:
 ```shell
 mkdir build
 cd build
-cmake ..
+cmake [-DCMAKE_INSTALL_PREFIX=<Installation Prefix>] ..
 make all
 ```
 
-Use `make translate` to make a translation
+Install with 
+```shell
+make install [DESTDIR=<DestinationDir>]
+```
 
 To clean up - just remove the *build* directory
